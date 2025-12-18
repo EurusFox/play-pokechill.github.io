@@ -3059,7 +3059,7 @@ pkmn.marill = {
         sdef: 50,
         spe: 40,
     },
-    evolve: function() { return { 1: { pkmn: pkmn.azumarill, item: waterStone } } },
+    evolve: function() { return { 1: { pkmn: pkmn.azumarill, item: item.waterStone } } },
     hiddenAbility: ability.hugePower,
 }
 

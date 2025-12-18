@@ -6,10 +6,20 @@
 
 
 
+const isIOS = (() => {
+  const ua = navigator.userAgent;
+  const platform = navigator.platform;
+
+  return (
+    /iPhone|iPod|iPad/.test(platform) ||
+    (platform === "MacIntel" && navigator.maxTouchPoints > 1)
+  );
+})();
 
 
+(function () {
+  if (!isIOS) return;
 
-(function () { //simulates contextmenu via longpress, thank you ios, very cool
   let timer;
   const LONG_PRESS = 500;
 
@@ -17,17 +27,17 @@
     if (e.touches.length !== 1) return;
 
     timer = setTimeout(() => {
-      const touch = e.touches[0];
+      const t = e.touches[0];
 
       const evt = new MouseEvent("contextmenu", {
         bubbles: true,
         cancelable: true,
         view: window,
-        clientX: touch.clientX,
-        clientY: touch.clientY
+        clientX: t.clientX,
+        clientY: t.clientY
       });
 
-      touch.target.dispatchEvent(evt);
+      t.target.dispatchEvent(evt);
     }, LONG_PRESS);
   }, { passive: false });
 
