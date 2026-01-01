@@ -200,6 +200,7 @@ function editTeamName(){
     const text = select.options[select.selectedIndex].text;
     document.getElementById("tooltipMid").innerHTML = `
     <input id="team-name-field" type="text" maxlength="15" placeholder="${text}">
+    <span id="prevent-tooltip-exit"></span>
     `
 
     document.getElementById("team-name-field").addEventListener("keydown", e => {
@@ -473,5 +474,6 @@ function setPkmnTeam(){
 
 
 }
+
 
 
