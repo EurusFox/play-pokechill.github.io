@@ -6646,7 +6646,7 @@ training.move = { //disapears if you have 20+ moves or smth
     info: `Learn a new Pokemon Move. Can only be done with less than 20 moves`,
     tier: 1,
     color: `#cf79c1`,
-    condition: function() { if (pkmn[saved.trainingPokemon].movepool.length<20) return true },
+    condition: function() { if (learnPkmnMove(pkmn[saved.trainingPokemon].id, pkmn[saved.trainingPokemon].level)!=undefined && pkmn[saved.trainingPokemon].movepool.length<20) return true },
     effect: function() {
         let learntMove = learnPkmnMove(pkmn[saved.trainingPokemon].id, pkmn[saved.trainingPokemon].level)
 
@@ -6988,4 +6988,3 @@ window.addEventListener('load', function() {
 
     //updateTeamExp()
 });
-
