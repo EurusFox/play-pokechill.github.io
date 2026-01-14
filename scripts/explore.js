@@ -3970,8 +3970,8 @@ function initialiseArea(){
     if (testAbility(`active`,  ability.snowWarning.id )) changeWeather("hail")
     if (testAbility(`active`,  ability.somberField.id )) changeWeather("foggy")
     if (testAbility(`active`,  ability.electricSurge.id )) changeWeather("electricTerrain")
-    if (testAbility(`active`,  ability.grassySurge.id )) changeWeather("grassySurge")
-    if (testAbility(`active`,  ability.mistySurge.id )) changeWeather("mistySurge")
+    if (testAbility(`active`,  ability.grassySurge.id )) changeWeather("grassyTerrain")
+    if (testAbility(`active`,  ability.mistySurge.id )) changeWeather("mistyTerrain")
 
 
 
@@ -7601,4 +7601,5 @@ window.addEventListener('load', function() {
 
     //updateTeamExp()
 });
+
 
