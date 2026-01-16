@@ -2813,7 +2813,8 @@ move.agility = {  //new
     power: 0,
     info: function() {return `Increases Speed by 75%`},
     hitEffect: function(target) { moveBuff(target,'speup2',"self")},
-    affectedBy: [ability.dancer.id]
+    affectedBy: [ability.dancer.id],
+    restricted: true,
 }
 
 move.calmMind = {
@@ -3198,9 +3199,10 @@ move.honeClaws = {
     rarity: 2,
     type: "dark",
     power : 0,
-    info: function() {return `Increases Attack by 50%`},
+    info: function() {return `Increases Attack by 50%. Attacks x2 faster than usual`},
     hitEffect: function(target) { moveBuff(target,'atkup1',"self") },
     restricted: true,
+    timer: defaultPlayerMoveTimer*0.5,
 }
 
 move.crunch = {
