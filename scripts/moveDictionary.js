@@ -2927,7 +2927,7 @@ move.stoneEdge = {
 
 move.meteorBeam = { //new
     moveset: [`psychic`],
-    split: "physical",
+    split: "special",
     rarity: 3,
     type: "rock",
     power: 120,
@@ -4090,9 +4090,9 @@ move.barrage = {
 move.mysticalPower = {
     split: "special",
     type: "psychic",
-    power: t4Base-40,
-    info: function() {return `Increases Special Attack by 50%`},
-    hitEffect: function(target) { moveBuff(target,'satkup1',"self") },
+    power: t4Base-20,
+    info: function() {return `50% chance to increase Special Attack by 50%`},
+    hitEffect: function(target) { if (rng(0.50))  moveBuff(target,'satkup1','self') },
 }
 
 move.psyshieldBash = {
@@ -4450,6 +4450,5 @@ for (const i in move){
     move[i].id = i
     if (move[i].timer == undefined) move[i].timer = defaultPlayerMoveTimer
 }
-
 
 
