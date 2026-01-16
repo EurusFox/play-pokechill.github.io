@@ -7344,6 +7344,41 @@ function setTrainingMenu() {
 
 
     div.addEventListener("click", e => { 
+
+
+
+
+
+
+
+        let restrictedError = false
+        let restricedActive = 0
+
+    for (const activeMoves in pkmn[saved.trainingPokemon].moves) {
+        if (pkmn[saved.trainingPokemon].moves[activeMoves] == undefined) continue
+        if (move[pkmn[saved.trainingPokemon].moves[activeMoves]].restricted) restricedActive++
+    }
+
+    if (restricedActive>1) restrictedError = true
+
+    
+
+    const restrictedIcon = `<svg style="color:${returnTypeColor("normal")}; margin: -0.3rem 0rem" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12.832 21.801c3.126-.626 7.168-2.875 7.168-8.69c0-5.291-3.873-8.815-6.658-10.434c-.619-.36-1.342.113-1.342.828v1.828c0 1.442-.606 4.074-2.29 5.169c-.86.559-1.79-.278-1.894-1.298l-.086-.838c-.1-.974-1.092-1.565-1.87-.971C4.461 8.46 3 10.33 3 13.11C3 20.221 8.289 22 10.933 22q.232 0 .484-.015c.446-.056 0 .099 1.415-.185" opacity="0.5"/><path fill="currentColor" d="M8 18.444c0 2.62 2.111 3.43 3.417 3.542c.446-.056 0 .099 1.415-.185C13.871 21.434 15 20.492 15 18.444c0-1.297-.819-2.098-1.46-2.473c-.196-.115-.424.03-.441.256c-.056.718-.746 1.29-1.215.744c-.415-.482-.59-1.187-.59-1.638v-.59c0-.354-.357-.59-.663-.408C9.495 15.008 8 16.395 8 18.445"/></svg>`
+
+    if (restrictedError) {
+        document.getElementById("tooltipTop").style.display = "none"
+        document.getElementById("tooltipBottom").style.display = "none"
+        document.getElementById("tooltipTitle").innerHTML = `Restricted Moves`
+        document.getElementById("tooltipMid").innerHTML = `The training Pokemon has multiple restricted moves (${restrictedIcon}) equipped!`
+        openTooltip()
+        return
+    }
+
+
+
+
+
+
         if (training[i].condition && training[i].condition()!=true) return
         areas.training.tier = training[i].tier
         areas.training.currentTraining = i
