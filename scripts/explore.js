@@ -812,7 +812,7 @@ function leaveCombat(){
     //battle factory rewards
     const minimumScore = 1000 - (50 * (4 - rotationFrontierCurrent)) // 850, 900, 950, or 1000
     if (battleFactoryScore !== 0 && (battleFactoryScore == saved.maxFactoryScore)) {
-        const baseThreshold = 100
+        const baseThreshold = 150
         const thresholdIncrease = (rotationFrontierCurrent - 1) * 50
         const scoreThreshold = baseThreshold + thresholdIncrease // 100, 150, 200, or 250
         
