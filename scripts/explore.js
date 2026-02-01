@@ -2364,7 +2364,7 @@ function exploreCombatPlayer() {
         let typeMultiplier = typeEffectiveness(moveType, pkmn[saved.currentPkmn].type)
 
 
-        if (areas[saved.currentArea].fieldEffect?.includes(field.ironBody.id) && typeEffectiveness(moveType, pkmn[saved.currentPkmn].type)>1) totalPower = 1
+        if (areas[saved.currentArea].fieldEffect?.includes(field.ironBody.id) && typeEffectiveness(moveType, pkmn[saved.currentPkmn].type)>1) typeMultiplier = 1
 
 
         if ( testAbility(`active`, ability.scrappy.id) && pkmn[saved.currentPkmn].type.includes("ghost") && (moveType == 'fighting' || moveType == 'normal')  ) typeMultiplier=1
