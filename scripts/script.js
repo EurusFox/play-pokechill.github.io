@@ -198,10 +198,12 @@ function updateGameVersion() {
   }
 
 
+  if (saved.version<3.7){
+  createArenaCards()
+  }
 
 
-
-  saved.version = 3.6
+  saved.version = 3.7
   document.getElementById(`game-version`).innerHTML = `v${saved.version}`
 }
 
@@ -723,7 +725,7 @@ guide.statusEffects = {
 
 guide.weather = {
   name: `Battle: Weather`,
-  description: function() { return `Certain moves can change the weather to altered ones such as ${tagSunny}, ${tagRainy}, ${tagSandstorm}, ${tagHail}, ${tagFoggy}, ${tagElectricTerrain}, ${tagGrassyTerrain} or ${tagMistyTerrain}<br><br>You can further check their effects by right click/long press<br><br>Altered weathers will last for 15 turns, and only can be changed after 30` }
+  description: function() { return `Certain moves can change the weather to altered ones such as ${tagSunny}, ${tagRainy}, ${tagSandstorm}, ${tagHail}, ${tagFoggy}, ${tagElectricTerrain}, ${tagGrassyTerrain}, ${tagMistyTerrain}, ${tagTrickRoom}, ${tagWeirdRoom}, ${tagCrossRoom}, ${tagLightScreen} or ${tagSafeguard}<br><br>You can further check their effects by right click/long press<br><br>Altered weathers will last for 15 turns, and only can be changed after 30` }
 }
 
 guide.shiny = {
