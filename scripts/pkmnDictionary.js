@@ -6045,7 +6045,9 @@ pkmn.hooh = {
         satk: 110,
         sdef: 154,
         spe: 90,
-    }
+    },
+    signature: move.sacredFire
+
 }
 
 // 251 Celebi
@@ -6240,6 +6242,7 @@ pkmn.megaSwampert = {
         spe: 70,
     },
     hiddenAbility: ability.swiftSwim,
+    eggMove : move.crabhammer
 }
 
 // 261 Poochyena → Mightyena
@@ -18511,6 +18514,7 @@ pkmn.garganacl = {
     spe: 35,
   },
      hiddenAbility: ability.purifyingSalt,
+    eggMove : move.rockWrecker
 }
 
 // 935 Charcadet → Armarouge / Ceruledge

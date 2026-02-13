@@ -4913,7 +4913,7 @@ if (sort !== "default") {
 
 
 fusePkmn = new Fuse(sortedPokemon, {
-    keys: [ { name: 'name', getFn: obj => obj.id }, 'type', "level", `ability`, `hiddenAbility.id`, `eggMove.id`, `movepool`,'tagShiny','tagPokerus'],
+    keys: [ { name: 'name', getFn: obj => obj.id }, 'type', "level", `ability`, `hiddenAbility.id`, `eggMove.id`, `movepool`,'tagShiny','tagPokerus', "tagSignature"],
     threshold: 0.1,
     useExtendedSearch: true,
     ignoreLocation: true,

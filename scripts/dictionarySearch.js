@@ -196,6 +196,7 @@ fuseDictionary = new Fuse(dictionaryItems, {
     'tagCaught', 
     'tagShiny',
     'eggMove',
+    'tagSignature',
     `affectedBy`
   ],
   threshold: 0.1,
@@ -289,6 +290,8 @@ function setSearchTags() {
         }
 
         if (e == pkmn.arceus.id) pkmn[e].tagObtainedIn = "arceus";
+        if (pkmn[e].signature) pkmn[e].tagSignature = "signature"
+        if (pkmn[e].eggMove) pkmn[e].tagSignature = "eggMove"
     }
 }
 

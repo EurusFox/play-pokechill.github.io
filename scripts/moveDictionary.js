@@ -4099,7 +4099,7 @@ move.mimic = {
     split: "special",
     type: "normal",
     power: 0,
-    info: function() {return `Perform the first move of the oponent, at double the base damage`},
+    info: function() {return `Perform the first move of the oponent, at double the base power`},
 }
 
 move.meFirst = {
