@@ -195,6 +195,7 @@ fuseDictionary = new Fuse(dictionaryItems, {
     'tagObtainedIn', 
     'tagCaught', 
     'tagShiny',
+    'eggMove',
     `affectedBy`
   ],
   threshold: 0.1,
