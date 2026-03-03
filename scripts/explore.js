@@ -1710,10 +1710,12 @@ function openMenu(){
         document.getElementById(`menu-item-vs`).style.filter = "brightness(0.6)"
         document.getElementById(`menu-item-team`).style.filter = "brightness(0.6)"
         document.getElementById(`menu-item-training`).style.filter = "brightness(0.6)"
+        document.getElementById(`menu-dimension`).style.filter = "brightness(0.6)"
     } else {
         document.getElementById(`menu-item-vs`).style.filter = "brightness(1)"
         document.getElementById(`menu-item-team`).style.filter = "brightness(1)"
         document.getElementById(`menu-item-training`).style.filter = "brightness(1)"
+        document.getElementById(`menu-dimension`).style.filter = "brightness(1)"
     }
 
     if (saved.currentArea == areas.training.id) {
@@ -5678,6 +5680,11 @@ function switchMenu(id){
     } 
 
     if (id==="dimension") {
+
+        if (saved.currentArea!==undefined) {openMenu(); return; }
+
+
+
         document.getElementById(`dimension-menu`).style.display = "flex"
         document.getElementById(`dimension-menu`).style.zIndex = "40"
         updateMegaDimension()
