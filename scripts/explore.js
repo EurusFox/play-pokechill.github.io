@@ -9408,6 +9408,24 @@ updateMegaDimension()
 
 
 
+window.addEventListener('beforeunload', function(event) {
+
+    if (afkSeconds > 10 && areas[saved.currentArea] != undefined){
+        event.preventDefault();
+        event.returnValue = ''; 
+        return ''; // Add this for older Firefox versions
+    }
+
+});
+
+
+
+
+
+
+
+
+
 window.addEventListener('load', function() {
 
 
